@@ -1,0 +1,29 @@
+<h1>NEW POST</h1>
+
+
+
+<%= form_with model: @post do |form| %>
+<% if @post.errors.any? %>
+<h2>SOME VALUES ARE MISSING</h2>
+<ul>
+<%@post.errors.full_messages.each do |message| %>
+<li>
+<%=message%>
+</li>
+<%end%>
+</ul>
+<%end%>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

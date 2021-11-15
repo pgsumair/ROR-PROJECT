@@ -1,0 +1,5 @@
+<%@articles.each do |article|%>
+<h2><%= article.title %></h2>
+<div><%= truncate(article.body,:length=>50) %></div>
+<%=link_to "Read Article", article %> 
+<%end %>

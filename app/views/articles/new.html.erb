@@ -1,0 +1,29 @@
+<h1>NEW ARTICLE</h1>
+
+
+
+<%= form_with model: @article do |form| %>
+<% if @article.errors.any? %>
+<h2>SOME VALUES ARE MISSING</h2>
+<ul>
+<%@article.errors.full_messages.each do |message| %>
+<li>
+<%=message%>
+</li>
+<%end%>
+</ul>
+<%end%>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

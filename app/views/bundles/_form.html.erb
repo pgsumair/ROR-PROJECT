@@ -1,0 +1,27 @@
+<%= form_with(model: bundle) do |form| %>
+  <% if bundle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bundle.errors.count, "error") %> prohibited this bundle from being saved:</h2>
+
+      <ul>
+        <% bundle.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_package %>
+    <%= form.text_field :name_package %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
